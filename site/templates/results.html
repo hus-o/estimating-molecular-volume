@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Calculate volume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles.css') }}">
+</head>
+<body>
+    <div class="style1">
+    <form method="POST", action="/results">
+        <input type="text" name="formula">
+        <input type="radio" name="whichset" value="usehoff" checked>Use Hoffmann avg volumes
+        <input type="radio" name="whichset" value="usehus" >Use Erdogan avg volumes
+        <input type="radio" name="whichset" value="useExt" >Use ExtraTrees avg volumes
+        <div style="style2">
+        <input type="submit" name="submit">
+        </div>
+    </form>
+    </div>
+	{% for element in parsedform: %}
+    	{% if element[0] in vols: %}
+        	
+         	{% if element[1] == "": %}
+            	
+        	
+        	{%endif%}
+    	{% else: %}
+            
+        	{%endif%}
+	
+	{%endfor%}
+    {% if nothere %}
+        <p class="justthat">We do not have data for {{fulllist}} omitting this the molecular volume is:</p>
+    {%endif%}
+    <div>
+	<p class="justthis">Approximately: {{totalvol}} Å³
+    <br>Possible unit cell volumes:<br>
+    <br>×2: {{unitcell2}} Å³
+    <br> ×4: {{unitcell4}} Å³ 
+    <br>×8: {{unitcell8}} Å³<br></p>
+    </div>
+</body>
+</html>
