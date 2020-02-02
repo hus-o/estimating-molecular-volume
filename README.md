@@ -1,5 +1,6 @@
 # estimating-molecular-volume
 A BSc dissertation project
+
 A series of Jupyter notebooks outlining the progress and process.
 
 Initially tried to replicate a formula found in a research paper, this proved unsuccesful due to ambiguity and contacting the author didn't result in a reply.
